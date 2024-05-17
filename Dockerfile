@@ -1,9 +1,20 @@
-FROM node:22-alpine3.18
+# Use a lightweight Node.js image as the base
+FROM node:18-alpine
 
-
-COPY . /app/
+# Set the working directory inside the container
 WORKDIR /app
 
-RUN npm install 
+# Copy the package.json and package-lock.json (or yarn.lock) files
+COPY package*.json ./
 
-CMD [ "executable" ]
+# Install dependencies using npm
+RUN npm install
+
+# Copy the entire project directory
+COPY . .
+
+# Expose port 3000 where the Next.js app runs
+EXPOSE 3000
+
+# Start the development server using npm run dev
+CMD ["npm", "run", "dev"]
