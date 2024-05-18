@@ -4,9 +4,11 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="container p-8">
+    <main className="container">
       <Hero />
       <Post />
+      <h1>hello</h1>
+      <h2>hello</h2>
     </main>
   );
 }

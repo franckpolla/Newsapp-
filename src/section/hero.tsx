@@ -20,24 +20,24 @@ export function CarouselPlugin() {
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="w-60 max-w-xs sm:w-[650px] md:w-[900px] sm:max-w-[920px] "
+      className="w-60  sm:w-[650px] md:w-[900px] sm:max-w-[920px] pt-10"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
         {heroSlides.map((item) => (
           <CarouselItem key={item.id}>
-            <div className="p-1">
+            <div className="p-1" >
               <Card>
                 <CardContent className="flex aspect-auto">
            <div className="relative">
-           <Image className="flex pt-6 relative " src={item.bgImg} width={800} height={150} alt={item.title} />
+           <Image className="flex pt-6 relative  overflow-hidden" src={item.bgImg} width={840} height={100} alt={item.title} />
            </div>
-            <div className="absolute flex-row text-neutral-50 w-96 pt-20 px-4 lg:pt-32 lg:px-10 lg:w-[500px]">
-          <div className="flex justify-center items-center">
-          <h2 className="text-2xl font-semibold ">{item.title}</h2>
+            <div className="absolute flex-row text-neutral-50 w-32 pt-8  overflow-hidden sm:w-96 sm:pt-20 px-4 lg:pt-32 lg:px-10 lg:w-[500px]">
+          <div className="flex justify-center items-center text-center">
+          <h2 className="text-[10px] sm:text-base md:text-2xl font-semibold ">{item.title}</h2>
           </div>
-          <span> {item.brief}</span>
+          <span className="text-[5px] sm:text-sm text-center"> {item.brief}</span>
             </div>
                 </CardContent>
               </Card>
@@ -57,8 +57,8 @@ export function CarouselPlugin() {
 
 const Hero = () => {
   return (
-    <div className="flex justify-center items-center">
-      <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center ">
+      <div className="flex justify-center items-center overflow-hidden">
         <CarouselPlugin />
       </div>
     </div>
