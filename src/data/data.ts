@@ -105,4 +105,7 @@ export const navs = [
       },
     },
   ];
+
+  export const Person1 = "/assets/img/person-1.jpg";
+
   

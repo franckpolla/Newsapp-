@@ -1,16 +1,24 @@
-import dbComnect from "../../../../config";
+
+import dbConnect from "../../../../config";
 import PostItem from "../../../../models/postItem";
 
-dbComnect();
+dbConnect();
 
 export async function GET(request: Request, response: Response) {
-  const postItem = await PostItem.find();
+  const postItem = await PostItem.find().select("-__v");
   return Response.json(postItem);
 }
 
+export async function POST(request: Request, response: Response) {
+ const postData = await request.json();
+ console.log(postData)
+const postItem = new PostItem(postData);
 
-export async function POST(request: Request) {
-    const postItem = new PostItem(request.body);
+  try {
     await postItem.save();
-    return postItem;
+   return  Response.json(postItem);
+  } catch (error: any) {
+    console.log(error.message);
+    return Response.json({ error: error.message }, { status: 500 });
+  }
 }

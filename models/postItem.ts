@@ -7,7 +7,7 @@ const Schema = new mongoose.Schema(
       required: true,
     },
     category: { type: String, required: true },
-    Date: { type: Date, required: true },
+    date: { type: Date, default: Date.now() },
 
     author: { type: String, required: true}, 
     title: {
@@ -25,7 +25,7 @@ const Schema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const PostItem =mongoose.model("NewPost", Schema);
+const PostItem = mongoose.models.Postitems || mongoose.model( "Postitems", Schema);
 // model (PostItem) acts as a wrapper around the schema, giving you methods to perform CRUD (Create, Read, Update, Delete) operations on your data.
+export default PostItem; 
 
-export default PostItem;

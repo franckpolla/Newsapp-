@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss"
-
 const config = {
   darkMode: ["class"],
   content: [
@@ -72,6 +71,7 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      important: true,
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -8,7 +8,7 @@ import Link from "next/link";
 import React from "react";
 
 const navigation = [
-  { name: "Post", href: "#", id: 1 },
+  { name: "Post", href: "/", id: 1 },
   { name: "Create post", href: "#", id: 2 },
   { name: "About", href: "#", id: 3 },
   { name: "Contact", href: "#", id: 4 },
