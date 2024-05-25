@@ -46,7 +46,7 @@ const Post = () => {
   }, []);
 
   return (
-    <section className="mt-5 flex flex-col lg:flex-row w-full justify-center  overflow-hidden  ">
+    <section className="mt-5 flex flex-col lg:flex-row w-full justify-center overflow-hidden  ">
       <div className="grid gap-2 grid-cols-1 lg:grid-cols-3 overflow-hidden"  >
         {items.length > 0 &&
           items

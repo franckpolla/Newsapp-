@@ -5,7 +5,7 @@ import Hero from "@/section/hero";
 
 export default function Home() {
   return (
-    <main className="container">
+    <main className="container justify-center items-center">
       <Hero />
       <Post /> 
     </main>
